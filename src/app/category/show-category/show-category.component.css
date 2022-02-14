@@ -1,0 +1,38 @@
+
+/*CSS for alerts*/
+
+#add-success-alert,
+ #delete-success-alert,
+ #update-success-alert{
+    
+    display: none;
+   
+}
+
+#add-success-alert,
+ #delete-success-alert,
+ #update-success-alert{
+    
+
+    animation-name:fadeInAndOut;
+    animation-duration: 5s;
+}
+
+@keyframes fadeInAndOut{
+    0%{opacity: 0;}
+    25%{opacity: 1;}
+    50%{opacity: 0;}
+    75%{opacity: 1;}
+    100%{opacity: 0;}
+}
+@keyframes fadeInAndOut{
+    0%{opacity: 0;}
+    25%{opacity: 1;}
+    50%{opacity: 0;}
+    75%{opacity: 1;}
+    100%{opacity: 0;}
+}
+
+html{
+    background-color: #ebe3e1;
+}

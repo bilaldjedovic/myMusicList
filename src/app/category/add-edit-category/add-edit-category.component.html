@@ -1,0 +1,50 @@
+<!--Form for inserting/edit song -->
+
+<form>
+    <div class="mb-3">
+        <label for="categoryId" class="form-label">Category</label>
+      <input type="text" class="form-control" name="categoryId" [(ngModel)]="categoryId" 
+        *ngIf="song.id!=0" disabled>
+        <select class="form-control" name="categoryId" id="categoryId" [ngModel]="categoryId" 
+        *ngIf="song.id==0">
+        <option *ngFor="let type of categoryList$|async" [value]="type.id">{{type.category}}</option>
+    </select>
+    </div>
+    <div class="mb-3">
+        <label for="songName" class="form-label">Song name</label>
+        <input type="text" class="form-control" [(ngModel)]="songName" name="songName">
+    </div>
+    <div class="mb-3">
+        <label for="author" class="form-label">Author</label>
+        <input type="text" class="form-control" [(ngModel)]="author" name="author">
+    </div>
+    <div class="mb-3">
+        <label for="link" class="form-label">Link</label>
+        <input type="text" class="form-control" [(ngModel)]="link" name="link">
+    </div>
+    <div class="mb-3">
+        <label for="rate" class="form-label">Rate</label>
+        <input type="long" class="form-control" [(ngModel)]="rate" name="rate">
+    </div>
+    <div class="mb-3">
+        <label for="rate" class="form-label">CategoryId</label>
+        <input type="long" class="form-control" [(ngModel)]="categoryId" name="categoryId">
+    </div>
+    <div class="mb-3">
+        <label for="createdAt" class="form-label">Created At</label>
+        <input type="datetime-local" class="form-control" [(ngModel)]="createdAt" name="createdAt">
+    </div>
+  
+    <div class="mb-3">
+        <label for="modifiedAt" class="form-label">Modified At</label>
+        <input type="datetime-local" class="form-control" [(ngModel)]="modifiedAt" name="modifiedAt">
+    </div>
+    
+    <button (click)="addSong()" *ngIf="song.id==0" class="btn btn-primary">
+         Add   
+    </button>
+
+    <button (click)="updateSong()" *ngIf="song.id!=0" class="btn btn-primary">
+        Update
+    </button>
+</form>
